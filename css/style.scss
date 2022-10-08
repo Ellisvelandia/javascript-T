@@ -55,13 +55,45 @@ body {
   }
 
   .btn-operator {
-    background-color: #1087e9;
-    color: #dbd9bf;
+    background-color: #bfc2db;
+    color: #fffde7;
   }
 
   .btn-equal {
     background-color: #053863;
     color: #dbd9bf;
+  }
+
+  &.dark {
+    background-color: #000000;
+
+    #display {
+      color: #d2e715;
+    }
+
+    #equal {
+      height: 130px;
+    }
+
+    #clear {
+      background-color: #d2e715;
+      color: #044d85;
+    }
+
+    .btn-number {
+      background-color: #d2e715;
+      color: #044d85;
+    }
+
+    .btn-operator {
+      background-color: #fffde7;
+      color: #044d85;
+    }
+
+    .btn-equal {
+      background-color: #e2ecf3;
+      color: #044d85;
+    }
   }
 }
 
@@ -72,20 +104,20 @@ body {
   color: #fffde7;
   cursor: pointer;
   z-index: 1;
-
   &::before {
     content: "";
+    position: absolute;
     height: 30px;
     width: 30px;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: #333;
+    background-color: #d2e715;
     z-index: 1;
   }
 }
 
-.theme-toggler .active {
+.theme-toggler.active {
   color: #333;
   &::before {
     background-color: #fffde7;
@@ -101,8 +133,7 @@ button {
   font-size: 20px;
   cursor: pointer;
   transition: all 200ms ease;
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
 }
-
