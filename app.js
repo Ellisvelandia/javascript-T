@@ -16,7 +16,6 @@
 //   resp.style = "color:red";
 // }
 
-
 // Array
 // const reply = document.getElementById("resp");
 // const btnRunner = document.getElementById("run");
@@ -30,3 +29,35 @@
 //     reply.innerHTML = array;
 //   });
 // }
+
+// call fetch
+
+// async function obtainData() {
+//   await fetch("https://api.github.com/repositories/19438/commits")
+//  .then(response=> response.json())
+//  .then(json=> console.log(json))
+//  .catch(error=> console.log('request for error',error))
+// }
+
+// obtainData()
+
+const display = document.querySelector("#display");
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((item) => {
+  item.onclick = () => {
+    if (item.id == "clear") {
+      display.innerText = "";
+    } else if (item.id == "backspace") {
+      let string = display.innerText.toString();
+      display.innerText = string.substr(0, string.length - 1);
+    } else if (display.innerText != "" && item.id == "equal") {
+      display.innerText = eval(display.innerText);
+    } else if (display.innerText == "" && item.id == "equal") {
+      display.innerText = "null";
+      setTimeout(() => (display.innerText = ""), 2000);
+    } else {
+      display.innerText += item.id;
+    }
+  };
+});
